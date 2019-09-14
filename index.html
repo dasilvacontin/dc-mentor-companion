@@ -7,6 +7,7 @@
             margin: 24px;
         }
         .section-title {
+            margin-top: 48px;
             text-transform: uppercase;
         }
         .checkbox-row {
@@ -33,14 +34,28 @@
             border-radius: 5px;
             border: 2px solid #333
         }
+
+        textarea {
+            width: 90%;
+        }
+        textarea, input[type="text"] {
+            border: 1px solid #333;
+        }
     </style>
 </head>
 <body>
-    <h1>You have been mentoring <b><input type="text"></b> since <b>11:05</b>.</h1>
+    <h1>You have been mentoring <b><input type="text"></b> since <b class="js-time"></b>.</h1>
+    <script>
+        document.querySelector('.js-time').innerHTML = String(new Date().getHours()) + ':' + String(new Date().getMinutes());
+    </script>
 
     <p>Remember: praise the process or the effort / result, which are repeatable. Avoid labelling with "you are such a good X", which can discourage them because of fear of not living up to the bar.</p>
 
     <p>Data doesn't get saved – use the screenshot feature of your phone.</p>
+
+    <p class="section-title">notes</p>
+
+    <textarea placeholder="Write anything here that you might want to remember later…"></textarea>
 
     <p class="section-title">Mentoring checklist</p>
 
